@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/parth-nautiyal/proShop#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "bcryptjs": "^3.0.2",
+    "express": "^5.1.0",
+    "mongoose": "^8.18.0"
   },
   "devDependencies": {
     "concurrently": "^9.1.2",
