@@ -4,6 +4,8 @@ import { Col, Row, ListGroup } from "react-bootstrap";
 import Rating from "../components/Rating";
 import { Card } from "react-bootstrap";
 import { useGetProductDetailsQuery } from "../slices/productApiSlice";
+import Loader from "../components/Loader";
+import Message from "../components/Message";
 
 
 const ProductScreen = () => {
@@ -12,7 +14,7 @@ const ProductScreen = () => {
 
   return (
     <>
-    {isLoading ? (<h2>Loading...</h2>) : error ? (<h3>{error?.data?.message || error.error}</h3>) : (
+    {isLoading ? (<Loader />) : error ? (<Message variant="danger">{error?.data?.message || error.error}</Message>) : (
       <>
       <Link to="/" className="btn btn-light my-3">
         Go Back
