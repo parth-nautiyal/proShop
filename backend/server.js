@@ -1,18 +1,17 @@
-import express from 'express';
-import dotenv from 'dotenv';  
+import express from "express";
+import dotenv from "dotenv";
 dotenv.config();
-import connectDB from './config/db.js';
-import productRoutes from './routes/productRoutes.js';
+import connectDB from "./config/db.js";
+import productRoutes from "./routes/productRoutes.js";
 const port = process.env.PORT || 3001;
 connectDB();
 
 const app = express();
-app.use('/api/products', productRoutes);
+app.use("/api/products", productRoutes);
 
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
-}
-);
+app.get("/", (req, res) => {
+  res.send("Hello, World!");
+});
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
