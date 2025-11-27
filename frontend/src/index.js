@@ -19,8 +19,8 @@ import CartScreen from "./screens/CartScreen";
 import LoginScreen from "./screens/LoginScreen";
 import ProductScreen from "./screens/ProductScreen";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
+const router = createBrowserRouter(// creates the router object that you can use in your app
+  createRoutesFromElements(// create JSX routes definition into a format the router understands
     <Route path="/" element={<App />}>
       <Route index={true} path="/" element={<HomeScreen />} />
 
@@ -33,8 +33,8 @@ const router = createBrowserRouter(
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={router} />
+    <Provider store={store}>// this will provide the store to the entire app
+      <RouterProvider router={router} />// this will provide the router to the entire app
     </Provider>
   </React.StrictMode>
 );
