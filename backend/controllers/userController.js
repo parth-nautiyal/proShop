@@ -8,10 +8,9 @@ import jwt from "jsonwebtoken";
 //@access  Public
 const authUser = asyncHandler(async (req,res) => {
     const { email, password } = req.body;
-
     const user = await User.findOne({ email });
 
-    const token = jwt.sign({ userId : user._id }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ user_id : user._id }, process.env.JWT_SECRET, {
         expiresIn: '30d',
     });
 
