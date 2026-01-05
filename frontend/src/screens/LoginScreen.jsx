@@ -6,7 +6,6 @@ import FormContainer from "../components/FormContainer";
 import Loader from "../components/Loader";
 import { useLoginMutation } from "../slices/userSlice";
 import { setCredentials } from "../slices/authSlice";
-import { Toast } from "react-bootstrap";
 import { toast } from "react-toastify";
 
 const LoginScreen = () => {
