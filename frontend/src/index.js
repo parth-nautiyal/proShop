@@ -18,6 +18,7 @@ import HomeScreen from "./screens/HomeScreen";
 import CartScreen from "./screens/CartScreen";
 import LoginScreen from "./screens/LoginScreen";
 import ProductScreen from "./screens/ProductScreen";
+import RegisterScreen from "./screens/RegisterScreen";
 
 const router = createBrowserRouter(// creates the router object that you can use in your app
   createRoutesFromElements(// create JSX routes definition into a format the router understands
@@ -26,6 +27,7 @@ const router = createBrowserRouter(// creates the router object that you can use
 
       <Route path="cart" element={<CartScreen />} />
       <Route path="login" element={<LoginScreen />} />
+      <Route path="register" element={<RegisterScreen />} />
       <Route path="product/:id" element={<ProductScreen />} />
     </Route>
   )
