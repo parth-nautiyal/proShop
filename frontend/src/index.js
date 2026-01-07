@@ -20,9 +20,12 @@ import LoginScreen from "./screens/LoginScreen";
 import ProductScreen from "./screens/ProductScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import ShippingScreen from "./screens/ShippingScreen";
+import PrivateRoute from "./components/PrivateRoute";
 
-const router = createBrowserRouter(// creates the router object that you can use in your app
-  createRoutesFromElements(// create JSX routes definition into a format the router understands
+const router = createBrowserRouter(
+  // creates the router object that you can use in your app
+  createRoutesFromElements(
+    // create JSX routes definition into a format the router understands
     <Route path="/" element={<App />}>
       <Route index={true} path="/" element={<HomeScreen />} />
 
@@ -30,7 +33,10 @@ const router = createBrowserRouter(// creates the router object that you can use
       <Route path="login" element={<LoginScreen />} />
       <Route path="register" element={<RegisterScreen />} />
       <Route path="product/:id" element={<ProductScreen />} />
-      <Route path="shipping" element={<ShippingScreen />} />
+
+      <Route path="" element={<PrivateRoute />}>
+        <Route path="shipping" element={<ShippingScreen />} />
+      </Route>
     </Route>
   )
 );
@@ -38,7 +44,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} /> 
+      <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
 );
